@@ -1,0 +1,124 @@
+<!doctype HTML><head><title>020115 actually</title><style type="text/CSS">
+BODY {padding:20%; background-color:#316066;/*pacificBlue*/}
+CANVAS {border:double 12px #433166;
+					;margin-left:-20%;}
+
+XMP {display:inline;}
+PRE {white-space:pre-wrap;}
+
+A {text-decoration: none;
+		; color:#859C2D; }
+LIfirst-line, {color:#859C2D;}
+
+</style></head><body>
+When this was opened it was blank. All know the [tragedy] that happened last-- Uh, yesterday.
+Thus comes this file. A boon, a gist and puff of fresh air, fresh promises.
+To get to the write as always is a feat. Where is the sister? Can't do productivity without a banner bearer.
+
+Thinking maybe, forgo it and just go again for hum, #JS anima.
+<br>
+<br>
+<canvas id="o" height="500" width="800"></canvas>
+<script type="text/Javascript">
+var ctx = document.getElementById("o").getContext("2d");
+//Uh. think that was all.
+//TESTing..
+//BasicsDraw (circle, rectangle, text)
+var x=o.width/4; y=x;
+w=x/4; h=w;
+
+
+ctx.beginPath();
+ctx.arc(40,50,12,0,2*Math.PI);
+ctx.stroke();
+ctx.beginPath();
+//ctx.rect(x,y,w,h);
+ctx.stroke();
+ctx.beginPath();
+//ctx.strokeText(character,x,y);
+//ctx.fillText(character,x,y);
+ctx.stroke();
+
+
+
+
+
+
+
+</script>
+<br>
+<br>
+Notes +Debuggery<OL>
+
+<LI>@droidEdit, #hotkey: [ctrl+d] for duplicate line. (edd: fact actually).
+<li>Feel like but not sure, Line 18: 
+<xmp>ctx.arc(x,y,12,0,2*Math.PI);</xmp> has a problem in the [Math.PI] bit..
+		<pre>Hmm. According to TY(http://www.w3schools.com/tags/canvas_arc.asp), nope. Is correct. So..?
+Maybe the [txt,x,y] is in wrong order again. Canceling..//~
+ll: There was no gap between defining height and width of [canvas]. 
+That wasn't it. And now the problem has become clear. Missing variables. D'oh. 
+</pre>
+
+<li>Gonna add borders first though, hee.//
+; 4px --> 12px
+<li> Added [br] tags for padding above and below canvas.//
+<li> ed: made [xmp] tags appear inline.//
+<li>Adding wrap for [pre]..//
+<li> ll: Will need to change colorNames to hash versions (or relatively close incarnations). Color palettes from sites would do finely too.
+		<pre> TY(google)(http://www.dtelepathy.com/blog/inspiration/beautiful-color-palettes-for-your-next-web-project)(<a href=http://www.colourlovers.com/palette/92095/Giant_Goldfish>colorLovers</a>)
+; Choices weren't neutrally dark enough for [background-color]. Utilized @droidEdit's colorPicker.
+Ed: Decided not to use the [goldfish]. TY(<a href=http://www.colourlovers.com/palettes/search?sortCol=votes&sortBy=desc&publishedEndDate=01%2F02%2F2015&publishedBeginDate=12%2F27%2F2004&query=&userName=&hex=316066&hueOptions%5B0%5D=&hueOptions%5B1%5D=&hueOptions%5B2%5D=&x=47&y=32>colorLovers  Search</a>)
+TY(<a href="http://www.colourlovers.com/palette/881263/watch_out">colorLovers - watchOut</a>):
+ll: [border] shorthand for hexColor did not seem to work. Another brainless moment because after trying it on TY(http://www.w3schools.com/css/tryit.asp?filename=trycss_border), realised color was still same as last. Background color so if course it does not show up. Keep forgetting @android #default browser is a pain with the [copypaste] functions.//
+
+</pre>
+<li> Getting [a] wrong. Knew it wasn't src. href. Thanks again (wSchools).//
+		<pre>Removed border. Wondered if was [text-decoration:none]. It was. TY(wSchools) but should stop questioning ourselves.//
+</pre>
+
+<li> ed: Editing page and removing "~" text from within large [pre]. ll: To own [li].//
+<li>Moving canvas's [padding] back to left with negativeValue did not work. Element probably has 0 value to begin with. Margin then.//
+<li> Something so lovable about this @droidEdit vs. @jota thing is that the earlier, the @currently, has undo even after switching out windows. ll: edd: Not so preppy is that [autosave] does not apply when doing so as the later does.
+<li>Stuck all opening [pre] tags into double indent for better editing readability. (Should've done this sooner, natch).//
+<li> Getting carried away with colors again? Oh you. The night will end on inputting those variables, kid.
+<li>Changed @droidEdit's editing fontFace. This "blah pro" looks smaller. Dunno if actually much different.
+<li>Ed: To Change [canvas] width to cover the negative margin gaps.//
+		<pre>(Finally recalling the last task now?)ll: (Last in as "last thing thought to do" not "last task in queue". Oh that's a while yet).
+500 --> 5000 ll: --> 1000 ll: -->600 -->800
+</pre>
+<li> Made colors for first lines in [li] same color as links. Looks nice but quite impratical when list items have no pre. Future markup/edits? Nah.//
+<li> Back to #JS variables..
+<LI> ll: Okay.... That's annoying. @droidEdit doesn't recognise [::first-line
+		<pre> And to try so would to fuzzle out the entire document's syntax highlights. Works on browser though. #bug.!
+ed: Tried out ll: (almost forgotten!) Linters. In the end copied to new document. Finally found out fact above.
+</pre>
+<LI>#JS objects weren't coming up. Figured after a moment: Of course, XY-coordinates were still set to full canvas width..//
+		<pre> More linting. Confusing stuff for a beginner. (ll: Especially since the language isn't used usually for the puny #HTML canvas) However, browser view was nice enough to display our code-y stuff inline. Meaning of course, it wasn't reading the dom. 
+Verdict: Wrote [script=""]. Left out "type".
+ed: Even when a certain linter above states that there's no type attribute. @google say there's no need for it anymore. Duh. Things won't just disappear four minutes into a project. Language standards won't anyway..
+</pre>
+<li> Good Darn-ing Night.
+<li> ll: Last idea for #GTD_later: Edit file here and split into relevant #CSS, #JS, etc parts and files. Would help with the pseudo-elements #bug with @droidedit. (As stated above).
+<li> ~
+		<pre>http://sixrevisions.com/tools/free-rss-readers/
+		http://sixrevisions.com/git/interactive-git-tutorials/
+		http://sixrevisions.com/web_design/full-screen-background-images-examples/
+		--OMG. All gone. Fuck. 
+		(So it is @droidEdit playing these errors huh)
+		
+		Try using a single HMTL document and creating various layouts using nothing but styles. The <a href="http://www.csszengarden.com">CSS Zen Garden</a> is a great example of how incredibly different your web page can become for the same markup. TY(http://sixrevisions.com/web-development/5-good-habits-that-will-make-you-a-better-coder/)
+		when I finally grew tired of the table-based layouts that I had been creating in the late 90s and into the early 21st century. At that time, I finally realized that it was time for me to switch over to best practices (divs).
+		http://www.makeuseof.com/tag/good-noows-alternative-google-reader/
+		~Done in and disappointed for the night. Yep, the other forcesjust had to go teach that lesson. Even when technically, at this time of the night, going into bedroom would be more of a bother to people sleeping than if i had stayed out. Meh. Night.
+		
+		</pre>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+</OL>
+
+</body>
