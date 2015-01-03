@@ -1,0 +1,119 @@
+<!doctype HTML><head><title>0301014</title><style type="text/css">
+BODY {margin-right:20%;}
+CANVAS {border:double 12px}
+TABLE, TR, TD{border:solid 2px; 
+						; border-collapse: collapse;
+						; table-layout:fixed;}
+TD {width:20%;}
+
+/**/</style></head><body>
+<canvas id="o" height="500" width="500"></canvas>
+<script>
+var ctx = document.getElementById("o").getContext("2d");
+
+// Basics
+var x=o.width/2; y=x; r=12;
+; var w=x/4; h=w;
+//circle. rectangle. text(S.F.)
+ctx.beginPath();
+ctx.arc(x,y,r,0,2*Math.PI);
+ctx.stroke();
+ctx.beginPath(); 
+ctx.rect(x,y,w,h);
+ctx.stroke();
+ctx.beginPath();
+ctx.strokeText("TESTing..",x,y);
+ctx.fillText("TESTing..",x,y);
+ctx.fill(); ctx.stroke();
+//TESTs.fin
+
+
+</script>
+
+<br>
+<br>
+Notes <OL>
+<li> ed: Thinking of using a palette from the get go.
+<li> Added a [br] to pad out Notes text from canvas. ll: Two.//
+		<pre>ll: ll: Other miscellaneous but non-linear additions go here?:
+		Added border to canvas.//
+		ll: Added 20% margin to document.//
+		</pre>
+<li> Nope, that #CSS [::first-line] pseudo-elementthingy definitely isn't flying in @droidEdit @android.
+<li> ed: Them #JS objects weren't turning up.//
+		<pre> After activating [preview in browser](@android #default because @chrome doesn't view incognito tabs and none in same window/view..
+		Thought it might'v been the whole [type="text/JS"] thing but nope, truncated and same result.
+		Realised again the [o.width] only definition for x..//~
+		ll: [Math.PI] was written with a capital "a" typo. Amended. Checking..//
+		</pre>
+<li> That's everything in place. Now for alignments.
+		<pre>ll: First questions first: Which sort of layout or information is being plotted?
+		The persons? (OOh presents?) The factions? ll: Persons or characters are perhaps more focused to story but all know this for us, has been done to death. Factions today, it is then.
+		<UL><li>Factions:
+		<li>Colors: [Blue], [Grey], [Yellow], [White]
+			<pre>Hierachy remains the same across factions; from bottom to top:
+			Commoner/Member: (see below)
+			Army: of following "groups" of officers; May also be of "commoner" status.
+			Officers: Colors([R], [G], [B]) or. Stripes([Minuses], [Ones], [Crosses]).
+			Leads/Heads: 
+			
+			</pre>
+		<li>Suits: [Spade], [Club], [Heart]
+		<li>and. [Diamond] king family/ies at top.
+		<li>~ ll: Thinking if should make this into a table..
+				<pre> Certainly would look more manageable?
+				</pre>
+				</pre><!--alignments.fin-->
+		<li>
+				<table>
+				<tr><TH> Factions of [Country]
+				</tr><tr><td> Diamond
+				</tr><tr><td colspan="4"> Colors		<td colspan="4"> Suits
+				</tr><tr> <td> Blue <td> Grey 				<td> Yellow <td> White
+										<td> Spade <td> Club <td> Heart
+				
+				</tr><tr><TH> Officers of [Faction]
+				</tr><tr><td> Colors <td> Stripes
+				</tr><tr>	<td>	Red <td> Green <td> Blue
+										<td>	Minuses <td> Ones <td> Crosses
+				</tr><tr><td> members of Army/Soldiers
+				</tr><tr><td>	Commoner/Member
+				
+				</table>
+		<li>
+		</UL>
+		
+<li> Need to look up how [th] is. Replacement for [tr] or [td]? ll: Or will try out for self first..
+		<pre> Add visbiity to [table]. 
+		ll: Forgot #CSS would only annotate it like a block element...
+		ll: Is it really simple [table border]?
+		TY(w3Schools). It's a binary value where [border=""] is the #HTML attribute. "1" means yeah.
+		; Additionally, recall that to apply border (ll:ed: in only) #CSS because each of [TH],[TD], [TR], etc are also elements..
+		ll: Looks like [th] is replacement for [tr].. ll: Or not. Definitely [td].//~
+		</pre>
+<li> ll: ed: Here's a mind to split document into related file-types. Again.
+<li> Realised ed: why one [th] was centered while the other was not. ed: [th] is a replacement for [td]. so therefore if [tr] was replaced instead, there would simply be another cell there.//~
+<li> [tr] not displaying border settings of #CSS.
+		<pre> Rows, columns, row groups, and column groups cannot have borders TY(http://stackoverflow.com/questions/18679020/border-around-tr-element-doesnt-show)
+		ll: Sigh. Oh well, at least ed: adding closing tags to every damn line isn't as tedious as it sounded. Right at the beginning with the next opening is a good readibility standard.
+		TY(same source): In the collapsing border model, it is possible to specify borders that surround all or part of a cell, row, row group, column, and column group.
+		So we know, you gotta do tit to get tat. 'Cept not why.
+		ll: TY(http://stackoverflow.com/questions/20872200/giving-a-border-to-an-html-table-row-tr) page indicates it is the [table] element for which to set [table-collapse:collapse] for. (Why can't they just say true/false? Especially given the other options are "separate" and "inherit"...)
+		ed: Same page mentions an [outline:solid 1px] property. @jsFiddle linked didn't work so will try that out next. ll: Last heard was that [outline] vs. [border] if recall right).
+		ll: Okay used collapse. It looks Nice. Definitely need to take the table out of [pre] though.
+		ll: Adding in [td] to showing borders for temporarily.
+		ll: Correcting [colspan] to "4" not 2 for [faction: groups].
+		ll: TY(http://stackoverflow.com/questions/20375288/make-columns-of-equal-width-in-table):  If you set the style table-layout: fixed; on your table, you can override the browser's automatic column resizing. The browser will then set column widths based on the width of cells in the first row of the table. Change your to and remove the inside of it, and then set fixed widths for the cells in .
+		Hmm. Same page mentions [width] in percentages. We know what that does already to elements within documents. TY: table-layout: fixed; /* optional, for equal spacing */
+		~TY(http://www.webdeveloper.com/forum/showthread.php?108964-Replace-TABLE-to-DIV) for example and (w3schools) for the quick testing platform. For [li] to act like table [td], one needs to apply a [float:left] attribute. ll: (Because elesewhere, someone mentioned [ul] was a completely dynamic alternative to [table]. With right #CSS).
+		ll: Yeah, nope. [table-layout:fixed] did not work.
+		ll: ed: Gave [width:20%] to new rule for only [td]. Unfortunately inclued [th]. using the [:not()] rule did not work to make an exclusion. ll: And of course there's stupid @droidEdit with that ":" bug.
+		
+		</pre>
+<li>
+<li>
+</OL>
+
+
+
+</body></html>
