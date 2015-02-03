@@ -3,8 +3,11 @@ BODY {margin-right:20%;}
 CANVAS {border:double 12px}
 TABLE, TR, TD{border:solid 2px; 
 						; border-collapse: collapse;
-						; table-layout:fixed;}
-TD {width:20%;}
+						; ; 
+						;}
+TABLE {width:100%}
+						
+PRE {white-space: pre-line;}
 
 /**/</style></head><body>
 <canvas id="o" height="500" width="500"></canvas>
@@ -66,18 +69,22 @@ Notes <OL>
 				</pre><!--alignments.fin-->
 		<li>
 				<table>
-				<tr><TH> Factions of [Country]
-				</tr><tr><td> Diamond
+<STYLE>
+
+
+</STYLE>
+				<tr><TH colspan="8"> Factions of [Country]
+				</tr><tr><td colspan="8"> Diamond
 				</tr><tr><td colspan="4"> Colors		<td colspan="4"> Suits
 				</tr><tr> <td> Blue <td> Grey 				<td> Yellow <td> White
 										<td> Spade <td> Club <td> Heart
 				
-				</tr><tr><TH> Officers of [Faction]
-				</tr><tr><td> Colors <td> Stripes
+				</tr><tr><TH colspan="8"> Officers of [Faction]
+				</tr><tr><td colspan="4"> Colors <td colspan="4"> Stripes
 				</tr><tr>	<td>	Red <td> Green <td> Blue
 										<td>	Minuses <td> Ones <td> Crosses
-				</tr><tr><td> members of Army/Soldiers
-				</tr><tr><td>	Commoner/Member
+				</tr><tr><td colspan="8"> members of Army/Soldiers
+				</tr><tr><td colspan="8">	Commoner/Member
 				
 				</table>
 		<li>
@@ -93,6 +100,7 @@ Notes <OL>
 		</pre>
 <li> ll: ed: Here's a mind to split document into related file-types. Again.
 <li> Realised ed: why one [th] was centered while the other was not. ed: [th] is a replacement for [td]. so therefore if [tr] was replaced instead, there would simply be another cell there.//~
+
 <li> [tr] not displaying border settings of #CSS.
 		<pre> Rows, columns, row groups, and column groups cannot have borders TY(http://stackoverflow.com/questions/18679020/border-around-tr-element-doesnt-show)
 		ll: Sigh. Oh well, at least ed: adding closing tags to every damn line isn't as tedious as it sounded. Right at the beginning with the next opening is a good readibility standard.
@@ -100,6 +108,7 @@ Notes <OL>
 		So we know, you gotta do tit to get tat. 'Cept not why.
 		ll: TY(http://stackoverflow.com/questions/20872200/giving-a-border-to-an-html-table-row-tr) page indicates it is the [table] element for which to set [table-collapse:collapse] for. (Why can't they just say true/false? Especially given the other options are "separate" and "inherit"...)
 		ed: Same page mentions an [outline:solid 1px] property. @jsFiddle linked didn't work so will try that out next. ll: Last heard was that [outline] vs. [border] if recall right).
+
 		ll: Okay used collapse. It looks Nice. Definitely need to take the table out of [pre] though.
 		ll: Adding in [td] to showing borders for temporarily.
 		ll: Correcting [colspan] to "4" not 2 for [faction: groups].
@@ -108,8 +117,41 @@ Notes <OL>
 		~TY(http://www.webdeveloper.com/forum/showthread.php?108964-Replace-TABLE-to-DIV) for example and (w3schools) for the quick testing platform. For [li] to act like table [td], one needs to apply a [float:left] attribute. ll: (Because elesewhere, someone mentioned [ul] was a completely dynamic alternative to [table]. With right #CSS).
 		ll: Yeah, nope. [table-layout:fixed] did not work.
 		ll: ed: Gave [width:20%] to new rule for only [td]. Unfortunately inclued [th]. using the [:not()] rule did not work to make an exclusion. ll: And of course there's stupid @droidEdit with that ":" bug.
+		ll: ~ ll: Pushed what's so far to @gitHub. ll: Interesting thing, seems @sgit is not displaying files by modiefied last first. #bah.
+		Removing fixed layout didn't do anything. It's the [width] alright.
+		ed: Forgot about [pre]'s wrap problem. Setting.. Set to [pre-line] actually. ll: Indents are for editor-view not preview. ed: Little probs with silly little "] vs. }" typo.//	
+		</pre>
+<li> ll: Had enough with that huge [pre]? Back to prettier places.
+<li> late revelation that; set a colspan to those primped [th]s yes?//
+		<pre> ll: There. resolved. 
+		Geez.
+		Would like #plux a more flexible colspan number. uto adjustable when total number of [td] change.
+		ll: The colspan="0" attribute in a TD is NOT spanning across all TDs in any of the above browsers.
+Maybe not recommended as proper markup practice, but if you give a higher colspan value than the total possible no. of columns in other rows, then the TD would span all the columns.
+This does NOT work when the table-layout CSS property is set to fixed. TY(http://stackoverflow.com/questions/398734/colspan-all-columns)
+ ; Warning: as mentioned in the comments below this is actually the same as colspan="100". Hence, this solution will break for tables with over 100 columns. It is a hack and does NOT ensure your row spans all columns. Just use this: colspan="100%" 
+		Coolios..//
+		[th] setting of 0 did not work. #bah.//~
+		Neither did the % appended version of it. ll: One just has to do things the hard way then//~
+		; ed: grest thing with the [.length]in #JS though. Will use that if ever one gets that advanced.
 		
 		</pre>
+<li>~Should remember from now on, little hanges like "ooh add a border" and asome shit is just boring to record. This "debuggery" not "log". Note mistakes, forgotten tricks, typos and hum, bugs. Not damn word everything one does. ll: Because all this white isn't blinding enough?//
+<li>ll: Inserted a [style] section right before table. Works.//
+<li>Wanted to use pure #CSS to define [colspan] by class for several cells at once.
+		<pre>No such luck.
+		There is no colspan in css as far as I know, but there will be column-span for multi column layout in the near future, but since it is only a draft in CSS3, you can check it in here. Anyway you can do a workaround using div and span with table-like display like this. TY(http://stackoverflow.com/questions/2403990/html-colspan-in-css)
+		</pre>
+<li> Shuld've said night ages ago. Oh well.
+<li> Now that ed: [diamond] is doing goodness knows what in terms of size and table is has been otherwise fixed, time for bed.
+		<pre>ll: Oh of course. [td] is currently set to fixed width. Thi came to light when other [td] were modified and resulted in same appearance.//
+		Yep. But now entire table is short and fat. There's fix for that.//
+		ll: Took a bit of fiddling but: Added [width:100%] to only [table] selector. Removed [tble-layout:fixed] from [table,tr,td]. Fin!
+		Or not. Good night you #bug-ger.
+		</pre>
+<li> ed: New fact; It's infintiely easier (less lag) to type both quotations then navigate back to type within them. @droidEdit.//
+<li>
+<li>
 <li>
 <li>
 </OL>

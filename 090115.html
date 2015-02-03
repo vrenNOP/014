@@ -1,0 +1,92 @@
+<!doctype HTML><title>Writes+ #JS </title><style type="text/CSS">
+BODY {MARGIN: 20%; BACKGROUND-COLOR:#868686;/*grey*/}
+PRE {white-space:pre-wrap;
+			;MARGIN:0; PADDING:0;}
+
+HR {background-color: #6a605c; /*brown*/; height:122px;
+		;border:none;}
+H2 {color:#6a605c; /*^brown*/}
+
+/**/</style></head><body>
+
+<h2>From the Ninth of January, 2015</h2>
+Plan: Write some. Prompt some. Sketch.
+<br/>Really, really, want to write. All forums are dead as dustballs in crawls.
+<OL><!--Notes.start -->
+
+
+<HR/>
+
+<LI>Palette at:<OL>
+		<li>(http://www.colourlovers.com/palette/3612845/Mabel1)
+		<li>Couldn't resist the pretty;(http://www.colourlovers.com/palette/3612840/blkgrybrnylwblu)
+		</OL>;
+<LI>That teaches someone certainly to <u>save the work</u>
+		<pre>Aw man. Three minutes later..
+		</pre>
+
+
+<CANVAS id="o" height="500" width="500"></CANVAS><SCRIPT>
+var ctx = document.getElementById("o").getContext("2d");
+//Prac: circle, rectangle, text(stroke, fill);//
+function d (x,y,w,h,t){
+ctx.beginPath();
+ctx.arc(x,y,12,0,2*Math.PI);
+ctx.stroke(); //ctx.fill();
+ctx.beginPath();
+ctx.rect(x,y,w,h);
+ctx.stroke(); //ctx.fill();
+ctx.beginPath();
+ctx.strokeText(t,x,y);
+ctx.fillText(t,x,y);
+}
+//of CANVAS 
+var c = o.width/2;
+d(c,c/2, c/4,c/4,"Test");
+
+//1x templateChar
+function ch (x,y){
+//head: circle(head,eyes, mouth), kite(nose),..
+ctx.beginPath();
+var hr =32 //radius
+ctx.arc(x,y,hr,0,2*Math.PI);//hHead
+ctx.stroke();
+ctx.beginPath();
+var x =x+(45*Math.PI/2); y;
+var ei =10;//increment
+var er =hr/2-ei;//radius
+var ec =1.5;//curve
+ctx.arc(x,y,er,0,ec*Math.PI);//lLeft eye
+ctx.arc(x+er,y,er,ec*Math.PI,0);//rRight
+ctx.stroke();
+ctx.beginPath();
+var mr =hr*2//radius
+ctx.arc(x,y,mr,0,1*Math.PI);//mMouth
+ctx.stroke();
+}ch(c/2,c/2);
+
+
+
+
+</SCRIPT>
+
+<br>
+<br>
+<LI> Cont'd:
+<LI>Consider breaking into individual files?
+<li>
+<li>Forgot to close function and execute before previewing. (And variables/arguments)
+<li>
+<li>Remembering that the circle is drawn with x as its center and degrees as resultig arc's ends.
+<li>
+<li>
+<li>
+<li>
+
+
+
+
+
+
+
+</body></HTML>
